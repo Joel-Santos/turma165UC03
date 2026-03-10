@@ -25,7 +25,7 @@ export default function ListaALunos({alunos, onEditar, onExcluir}){
                             <td>{aluno.nota}</td>
                             <td>
                                 <button onClick={() => onEditar(aluno)}> Editar</button>
-                                <button onClick={() => onExcluir(aluno.id)}> Editar</button>
+                                <button onClick={() => onExcluir(aluno.id)}> Excluir</button>
                             </td>
                            </tr> 
                         ))
