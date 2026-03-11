@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "./alunoPages.css";
 import ListaALunos from "../components/listaAlunos/ListaAlunos";
 import FormAluno from "../components/formAluno/FormAluno";
 
@@ -49,22 +49,35 @@ export default function AlunosPage() {
         setAlunoEmEdicao(null);
     }
     return (
-        <>
-            <FormAluno
-                onSalvar={salvarAluno}
-                alunoEmEdicao={alunoEmEdicao}
-                onCancelar={cancelarEdicao}
+        <main className="page-shell">
+            <section className="page-hero">
+                <div>
+                    <p className="page-eyebrow">Gestão acadêmica</p>
+                    <h1 className="page-title">Cadastro de alunos</h1>
+                    <p className="page-description">
+                        Cadastre, edite e acompanhe os alunos em uma interface mais clara,
+                        organizada e fácil de usar.
+                    </p>
+                </div>
+                <div className="page-summary">
+                    <span className="summary-label">Total de alunos</span>
+                    <strong className="summary-value">{alunos.length}</strong>
+                </div>
+            </section>
 
-            />
-            <ListaALunos
-                alunos={alunos}
-                onEditar={editarAluno}
-                onExcluir={removerAluno}
-            />
-
-        </>
+            <div className="container">
+                <FormAluno
+                    onSalvar={salvarAluno}
+                    alunoEmEdicao={alunoEmEdicao}
+                    onCancelar={cancelarEdicao}
+                />
+                <ListaALunos
+                    alunos={alunos}
+                    onEditar={editarAluno}
+                    onExcluir={removerAluno}
+                />
+            </div>
+        </main>
     )
-
-
 }
 
