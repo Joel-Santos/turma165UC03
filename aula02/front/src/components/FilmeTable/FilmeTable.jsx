@@ -1,13 +1,14 @@
 export default function FilmeTable({ filmes, onEditar, onExcluir }) {
     return (
         <>
+        <section className="table-section">
             <h2>Filmes Cadastrados</h2>
             {filmes.length === 0 ?
                 (
                     <p> Nenhum filme cadastrado.</p>
                 ) :
                 (
-                    <table>
+                    <table className="filme-table">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -27,11 +28,13 @@ export default function FilmeTable({ filmes, onEditar, onExcluir }) {
                                         <td>{filme.genero}</td>
                                         <td>{filme.ano}</td>
                                         <td>
-                                            <img src={filme.imagem_url} alt={filme.titulo} />
+                                            <img src={filme.imagem_url} alt={filme.titulo} className="thumb-filme"/>
                                             </td>
                                         <td>
-                                            <button onClick={() => onEditar(filme)}>Editar</button>
-                                            <button onClick={() => onExcluir(filme.id)}>Excluir</button>
+                                            <div className="acoes-tabela">
+                                                <button onClick={() => onEditar(filme)}>Editar</button>
+                                                <button onClick={() => onExcluir(filme.id)}>Excluir</button>
+                                            </div>
                                         </td>
                                     </tr>
                                 ))
@@ -39,6 +42,7 @@ export default function FilmeTable({ filmes, onEditar, onExcluir }) {
                         </tbody>
                     </table>
                 )}
+     </section>
         </>
     )
 }

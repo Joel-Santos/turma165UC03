@@ -6,6 +6,7 @@ import {
     atualizarFilme, deletarFilme,
     buscarFilmeId
 } from "../../services/filmeService";
+import "./AdminFilmesPage.css";
 
 export default function AdminFilmesPage() {
     const [filmes, setFilmes] = useState([]);
@@ -51,18 +52,23 @@ export default function AdminFilmesPage() {
     }
     return (
         <>
-            <h1> Admistração de Filmes</h1>
-            <p>Cadastre, edite e exclua filme do catálogo.</p>
-            <FilmeForm
-                onSalvar={salvarFilme}
-                filmeEmEdicao={filmeEmEdicao}
-                onCancelar={cancelarEdicao}
-            />
-            <FilmeTable
-                filmes={filmes}
-                onEditar={editarFilme}
-                onExcluir={excluirFilme}
-            />
+            <main className="container">
+                <section className="cabecalho-admin">
+                    <h1> Admistração de Filmes</h1>
+                    <p>Cadastre, edite e exclua filme do catálogo.</p>
+                </section>
+                <FilmeForm
+                    onSalvar={salvarFilme}
+                    filmeEmEdicao={filmeEmEdicao}
+                    onCancelar={cancelarEdicao}
+                />
+                <FilmeTable
+                    filmes={filmes}
+                    onEditar={editarFilme}
+                    onExcluir={excluirFilme}
+                />
+            </main>
+
         </>
 
     )
