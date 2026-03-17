@@ -1,0 +1,48 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+.cabecalho-usuario {
+    margin-bottom: 24px;
+}
+
+.cabecalho-usuario h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.cabecalho-usuario p {
+    color: #555;
+}
+
+.grid-filmes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filme-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filme-card-imagem {
+    max-width: 14.3125rem;
+    height: 21.25rem;
+    object-fit: cover;
+}
+
+.filme-card-conteudo {
+    padding: 1rem;
+}
+
+.filme-card-conteudo h2{
+    font-size: 1.2rem;
+    margin-bottom: .625rem;
+}
+.filme-card-conteudo p{
+    margin-bottom: .5rem;
+}

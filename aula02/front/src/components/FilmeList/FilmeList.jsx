@@ -8,7 +8,7 @@ export default function FilmeList({ filmes }) {
                     <p> Nenhum filme cadastrado.</p>
                 ) :
 
-                <section>
+                <section className="grid-filmes">
                         {
                             filmes.map((filme) =>(
                                 <FilmeCard
