@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function FilmeCard({filme}){
     return(
         <>
@@ -12,6 +13,7 @@ export default function FilmeCard({filme}){
                         <p>Gênero: {filme.genero}</p>
                         <p>Ano: {filme.ano}</p>
                     </div>
+                    <Link to={`/filmes/${filme.id}`}>Ver detalhes</Link>
             </article>
         </>
     )
