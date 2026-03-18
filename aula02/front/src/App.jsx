@@ -11,13 +11,17 @@ export default function App() {
     <>
 
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<FilmesUsuarioPage />} />
-           <Route path="/filmes/:id" element={<FilmeDetalhePage />} />
-          <Route path="/admin" element={<AdminFilmesPage />} />
-        </Routes>
-        <Footer />
+        <div className="app-shell">
+          <Header />
+          <main className="app-content">
+            <Routes>
+              <Route path="/" element={<FilmesUsuarioPage />} />
+              <Route path="/filmes/:id" element={<FilmeDetalhePage />} />
+              <Route path="/admin" element={<AdminFilmesPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </BrowserRouter>
 
     </>

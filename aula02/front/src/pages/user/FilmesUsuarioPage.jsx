@@ -20,7 +20,7 @@ export default function FilmesUsuarioPage() {
 
     return (
         <>
-        <main className="container">
+        <main className="usuario-container">
             <section className="cabecalho-usuario">
                 <h1>Catálogo de Filmes</h1>
                 <p>Confira os filmes disponíveis no catálogo.</p>

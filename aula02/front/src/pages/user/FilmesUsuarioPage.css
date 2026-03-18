@@ -1,4 +1,4 @@
-.container {
+.usuario-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 20px;
@@ -18,31 +18,68 @@
 }
 
 .grid-filmes {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
 }
 
 .filme-card {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filme-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 24px rgba(15, 23, 42, 0.14);
 }
 
 .filme-card-imagem {
-    max-width: 14.3125rem;
+    width: 100%;
     height: 21.25rem;
     object-fit: cover;
 }
 
 .filme-card-conteudo {
     padding: 1rem;
+    flex: 1;
 }
 
 .filme-card-conteudo h2{
-    font-size: 1.2rem;
-    margin-bottom: .625rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.625rem;
+    color: #111827;
 }
 .filme-card-conteudo p{
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+}
+
+.filme-card-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    background: #111827;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.filme-card-link:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
+}
+
+.filme-card-link:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
 }
