@@ -17,6 +17,20 @@
     color: #555;
 }
 
+.busca-box{
+    margin: 1.25rem 0;
+}
+.busca-box input {
+    width: 100%;
+    padding: .75rem;
+    border-radius: .5rem;
+    border: .0625rem solid #ccc;
+    outline: none;
+}
+.busca-box input:focus{
+    border-color: #2563eb;
+}
+
 .grid-filmes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
