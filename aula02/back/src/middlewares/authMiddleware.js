@@ -26,3 +26,13 @@ export function autenticarToken(req, res, next){
         res.status(403).json({msg: "Erro interno autorização", erro: error.message});
     }
 }
+
+export function verficarAcesso(req, res, next){
+    const usuario = req.usuario;
+    const {id} = req.params;
+    if(usuario.role === "ADMIN" || usuario.id === id){
+        next();
+        return 
+    }
+    return res.status(403).json({msg:"Acesso Negado"});
+}
