@@ -11,10 +11,10 @@ router.post("/login", UsuarioController.loginUsuario);
 //rota privada
 router.get("/", autenticarToken, autorizarPapeis("ADMIN"), UsuarioController.listarUsuarios);
 
-
-router.get("/:id", autenticarToken, autorizarPapeis("ADMIN", "USER"), verficarAcesso, UsuarioController.buscarPorId);
-router.put("/:id",  autenticarToken, autorizarPapeis("ADMIN", "USER"), verficarAcesso, UsuarioController.atualizarUsuario);
-router.delete("/:id",  autenticarToken, autorizarPapeis("ADMIN", "USER"), verficarAcesso, UsuarioController.deletarUsuario);
+router.get("/me", autenticarToken, UsuarioController.me);
+router.get("/:id", autenticarToken, verficarAcesso, UsuarioController.buscarPorId);
+router.put("/:id",  autenticarToken, verficarAcesso, UsuarioController.atualizarUsuario);
+router.delete("/:id",  autenticarToken, verficarAcesso, UsuarioController.deletarUsuario);
 
 export default router;
 
