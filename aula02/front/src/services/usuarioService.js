@@ -4,6 +4,9 @@ import api from "./api";
 export async function login(data){
     return api.post("/usuarios/login", data);
 }
+export async function logout(){
+    return api.post("/usuarios/logout");
+}
 export async function getMe() {
     return api.get("/usuarios/me");
 }

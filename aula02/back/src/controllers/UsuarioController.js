@@ -143,4 +143,13 @@ export class UsuarioController {
         }
     }
 
+    static async logoutUsuario(req, res){
+        try {
+            res.clearCookie("token");
+            res.status(200).json({msg: "Logout realizado com sucesso!"});
+        } catch (error) {
+            res.status(500).json({msg: "Erro interno ao realizar o logout", erro: error.message})
+        }
+    }
+
 }

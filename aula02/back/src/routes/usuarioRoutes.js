@@ -7,6 +7,7 @@ const router = express.Router();
 //rotas públicas
 router.post("/",UsuarioController.criarUsuario);
 router.post("/login", UsuarioController.loginUsuario);
+router.post("/logout", UsuarioController.logoutUsuario);
 
 //rota privada
 router.get("/", autenticarToken, autorizarPapeis("ADMIN"), UsuarioController.listarUsuarios);
