@@ -14,7 +14,7 @@ app.use(
     cors(
         {
             origin: process.env.API_URL_FRONT,
-            credentials: true
+            credentials: false
         }
 
     )
