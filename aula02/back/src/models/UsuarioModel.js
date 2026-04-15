@@ -9,7 +9,7 @@ export class UsuarioModel{
         return db.query(sql, [email]);
     }
     static buscarPorId(id){
-        const sql = `select id, nome, role from usuarios where id = $1`;
+        const sql = `select id, nome, email, role from usuarios where id = $1`;
         return db.query(sql, [id]);
     }
     static criarUsuario(id, nome, email, senha, role){

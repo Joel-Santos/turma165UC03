@@ -1,0 +1,129 @@
+.auth-page {
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 32px 16px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+    animation: authCardEnter 420ms ease-out;
+    transform-origin: top center;
+}
+
+@keyframes authCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.auth-card h1 {
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.auth-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+}
+
+.auth-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.auth-toggle button {
+    border: 1px solid var(--border-soft);
+    background: #f9fafb;
+    color: var(--text-secondary);
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.auth-toggle button.active {
+    border-color: var(--brand-500);
+    background: var(--brand-100);
+    color: var(--brand-600);
+}
+
+.auth-form {
+    display: grid;
+    gap: 12px;
+}
+
+.auth-form input {
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    padding: 12px;
+    outline: none;
+}
+
+.auth-form input:focus {
+    border-color: var(--brand-500);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.auth-form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 10px;
+    background: var(--brand-500);
+    color: #ffffff;
+    padding: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.auth-form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.auth-feedback {
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.auth-feedback.error {
+    color: #b91c1c;
+    background: var(--danger-100);
+    border: 1px solid #fecaca;
+}
+
+.auth-feedback.success {
+    color: #166534;
+    background: var(--success-100);
+    border: 1px solid #bbf7d0;
+}
+
+.auth-tip {
+    margin-top: 14px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .auth-card {
+        animation: none;
+    }
+}

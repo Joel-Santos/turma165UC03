@@ -5,6 +5,7 @@ import FilmesUsuarioPage from "./pages/user/FilmesUsuarioPage";
 import FilmeDetalhePage from "./pages/filmeDetalhePage/FilmeDetalhePage";
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 import LoginPage from "./pages/login/LoginPage";
+import ProfilePage from "./pages/profile/ProfilePage";
 import PrivateRoute from "./routes/PrivateRoute";
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
@@ -36,6 +37,12 @@ export default function App() {
                 {
                   <PrivateRoute role="ADMIN">
                     <AdminFilmesPage />
+                  </PrivateRoute>
+                } />
+              <Route path="/perfil" element=
+                {
+                  <PrivateRoute>
+                    <ProfilePage />
                   </PrivateRoute>
                 } />
               <Route path="*" element={<NotFoundPage />} />

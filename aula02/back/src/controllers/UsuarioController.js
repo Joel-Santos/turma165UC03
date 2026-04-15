@@ -142,8 +142,16 @@ export class UsuarioController {
 
     static async me(req, res) {
         try {
-            res.status(200).json({ msg: "Dados encontrados", usuario: req.usuario });
-            return
+            const result = await UsuarioModel.buscarPorId(req.usuario.id);
+            const usuario = result.rows[0];
+
+            if (!usuario) {
+                res.status(404).json({ msg: "Usuário não encontrado!" });
+                return;
+            }
+
+            res.status(200).json({ msg: "Dados encontrados", usuario });
+            return;
         } catch (error) {
             res.status(500).json({ msg: "Erro ao buscar usuário logado", erro: error.message });
         }

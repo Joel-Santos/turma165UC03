@@ -1,0 +1,114 @@
+.profile-page {
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 32px 16px;
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 560px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+    animation: profileCardEnter 450ms ease-out;
+    transform-origin: top center;
+}
+
+@keyframes profileCardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.profile-card h1 {
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.profile-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+}
+
+.profile-form {
+    display: grid;
+    gap: 14px;
+}
+
+.profile-form label {
+    display: grid;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.profile-form input {
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    padding: 12px;
+    outline: none;
+    font-weight: 500;
+}
+
+.profile-form input:focus {
+    border-color: var(--brand-500);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.profile-form input:disabled {
+    color: var(--text-secondary);
+    background: #f3f4f6;
+}
+
+.profile-form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+    border: none;
+    border-radius: 10px;
+    background: var(--brand-500);
+    color: #ffffff;
+    padding: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.profile-form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.profile-feedback {
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.profile-feedback.error {
+    color: #b91c1c;
+    background: var(--danger-100);
+    border: 1px solid #fecaca;
+}
+
+.profile-feedback.success {
+    color: #166534;
+    background: var(--success-100);
+    border: 1px solid #bbf7d0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-card {
+        animation: none;
+    }
+}
